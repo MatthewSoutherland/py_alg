@@ -58,6 +58,7 @@ def create_spend_chart(categories):
 
 class Category:
 
+    # required with every class. Will initialized the object created.
     def __init__(self, name):
         self.name = name
         self.ledger = list()
@@ -76,6 +77,7 @@ class Category:
         return output
 
     def deposit(self, amount, description=""):
+
         self.ledger.append({"amount": amount, "description": description})
 
     def withdraw(self, amount, description=""):
