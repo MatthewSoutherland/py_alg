@@ -7,17 +7,17 @@ def getTotals(categories):
     total = 0
     breakdown = []
     for category in categories:
-        total += Category.get_withdrawls()
-        breakdown.append(Category.get_withdrawls())
+        total += category.get_withdrawls()
+        breakdown.append(category.get_withdrawls())
 
-    rounded = list(map(lambda x: truncate(x/total), breakdown))
+    rounded = list(map(lambda x: truncate(x / total), breakdown))
     return rounded
 
 
 def create_spend_chart(categories):
     """
-    create_spend_chart that takes a list of categories as an argument. It should return a string that is a bar chart
-    """
+      create_spend_chart that takes a list of categories as an argument. It should return a string that is a bar chart
+      """
     res = "Percentage spent by category\n"
     i = 100
     totals = getTotals(categories)
@@ -25,9 +25,9 @@ def create_spend_chart(categories):
         cat_spaces = " "
         for total in totals:
             if total * 100 >= i:
-                cat_spaces += "o "
+                cat_spaces += "o  "
             else:
-                cat_spaces += "  "
+                cat_spaces += "   "
         res += str(i).rjust(3) + "|" + cat_spaces + ("\n")
         i -= 10
 
@@ -35,17 +35,17 @@ def create_spend_chart(categories):
     names = []
     x_axis = ""
     for category in categories:
-        names.append(Category.name)
+        names.append(category.name)
 
     maxi = max(names, key=len)
 
     for x in range(len(maxi)):
-        nameStr = '    '
+        nameStr = '     '
         for name in names:
             if x >= len(name):
-                nameStr += "  "
+                nameStr += "   "
             else:
-                nameStr += name[x] + " "
+                nameStr += name[x] + "  "
 
         if (x != len(maxi) - 1):
             nameStr += '\n'
