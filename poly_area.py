@@ -10,8 +10,8 @@ class Rectangle:
     def set_width(self, width):
         self.width = width
 
-    def set_height(height):
-        height = height
+    def set_height(self, height):
+        self.height = height
 
     def get_area(self):
         area = self.width * self.height
@@ -22,13 +22,13 @@ class Rectangle:
         return perimeter
 
     def get_diagonal(self):
-        diagonal = ((self.width ** 2 + self.height ** 2) ** .5)
+        diagonal = ((self.width**2 + self.height**2)**.5)
         return diagonal
 
     def get_picture(self):
         if (self.width > 50 or self.height > 50):
             return "Too big for picture."
-        string = (("*") * self.width) + "\n" * self.height
+        string = (("*" * self.width) + "\n") * self.height
         return string
 
     def get_amount_inside(self, shape):
