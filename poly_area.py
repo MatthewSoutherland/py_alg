@@ -4,6 +4,9 @@ class Rectangle:
         self.width = width
         self.height = height
 
+    def __str__(self):
+        return f'Rectangle(width={self.width}, height={self.height})'
+
     def set_width(self, width):
         self.width = width
 
@@ -37,8 +40,3 @@ class Square(Rectangle):
     def __init__(self, side):
         self.width = side
         self.height = side
-
-
-box = Rectangle(5, 10)
-
-print(dir(box))
